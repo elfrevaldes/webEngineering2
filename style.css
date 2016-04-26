@@ -47,7 +47,7 @@
     }
 
     .mainNav li > a{
-        color: white;
+        color: black;
         text-decoration: none;
         text-transform: uppercase;
         padding: 4px 5px 3px 3px;
@@ -57,9 +57,9 @@
     }
 
         .mainNav li > a:hover{
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
-            border-top-color: white;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-top-color: black;
 
             /*outline: none;
             text-decoration: none;
