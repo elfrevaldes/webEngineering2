@@ -1,0 +1,67 @@
+﻿body {
+    font-family: 'Museo Sans', sans-serif;
+    margin: 0px; /* don't want space wasted*/
+}
+
+h3 {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    text-decoration: none;
+}
+
+/* this is the background image of the page*/
+#hfsbg {
+    width: 100%;
+    height: auto;
+    position: fixed; /* so the image doesn't move with the page */
+    top: 0;
+    left: 0;
+    z-index: -10; /* back item */
+    min-height: 100%;
+    min-width: 400px;
+}
+
+#header {
+    min-height: 100px;
+}
+
+#body {
+    margin-bottom: 100px;
+    min-height: 70vh; /* so that I can have the footer at the bottom */
+    position: relative;
+}
+
+#footer {
+    min-height: 60px;
+    bottom: 0px;
+}
+
+.clearfooter {
+    clear: both;
+}
+
+.mainNav {
+    left: 0;
+    right: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: normal;
+    z-index: 10;
+}
+
+.slideShowContainer {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.accordionBackground{
+    background-color: gold;
+}

@@ -1,0 +1,105 @@
+﻿#slideshow #slidesContainer {
+    margin: 0 auto;
+    width: 660px !important;
+    height: 263px;
+    overflow: auto; /* allow scrollbar */
+    position: relative;
+}
+
+    #slideshow #slidesContainer .slide {
+        margin: 0 auto;
+        width: 660px;
+        height: 263px;
+    }
+
+#slideshow {
+    position: relative;
+    background-color: #dfdfdf;
+}
+
+.centerHor {
+    text-align: center;
+    margin: 0px auto;
+}
+
+.slide h2, .slide p {
+    margin: 15px;
+}
+
+.slide h2 {
+    font: italic 24px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: -1px;
+}
+
+.slide img {
+    float: right;
+    margin-top: 18px;
+}
+
+/*** Slideshow controls style rules. ***/
+.control {
+    display: block;
+    width: 39px;
+    height: 263px;
+    text-indent: -10000px;
+    position: absolute;
+    cursor: pointer;
+}
+
+#leftControl {
+    top: 0;
+    left: 0;
+    background: transparent url(../img/control_left.jpg) no-repeat 0 0;
+}
+
+    #leftControl:hover {
+        -moz-box-shadow: inset 0 0 5px #FFFFFF;
+        -webkit-box-shadow: inset 0 0 5px #FFFFFF;
+        box-shadow: inset 0 0 5px #FFFFFF;
+    }
+
+#rightControl {
+    top: 0;
+    right: 0;
+    background: transparent url(../img/control_right.jpg) no-repeat 0 0;
+}
+
+    #rightControl:hover {
+        -moz-box-shadow: inset 0 0 5px #FFFFFF;
+        -webkit-box-shadow: inset 0 0 5px #FFFFFF;
+        box-shadow: inset 0 0 5px #FFFFFF;
+    }
+
+#slideNav {
+    margin: 0px;
+    margin-top: 2px;
+}
+
+.navItem {
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    padding: 4px 6px 4px 6px;
+    border: 1px solid #dfdfdf;
+    border-radius: 0px 0px 10px 10px;
+    cursor: pointer;
+    list-style: none;
+    display: inline;
+    margin-right: 2px;
+    background-color: beige;
+}
+
+.slide .more {
+    text-decoration: none;
+    line-height: 40px;
+    color: black;
+    border: 1px solid #efefef;
+    background-color: white;
+    padding: 4px 8px 4px 8px;
+    border-radius: 25px;
+}
+
+#selected {
+    background-color: #dfdfdf;
+}

@@ -1,0 +1,41 @@
+﻿.mainNav {
+    position: absolute;
+    top: 50px;
+}
+    .mainNav ul {
+        float: right;
+        margin-right: 20px;
+    }
+
+    .mainNav li {
+        text-align: center;
+        float: left;
+    }
+
+        .mainNav li > a {
+            color: black;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 4px 5px 3px 3px;
+            margin: 0px 5px 0px 10px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+            .mainNav li > a:after {
+                width: 100%;
+                height: 20px;
+                position: absolute;
+                bottom: 2px;
+                left: 0px;
+                content: '';
+                background: rgba(226, 103, 103, 0.03);
+                transform: scaleX(0);
+                transition: all .2s linear;
+            }
+
+            .mainNav li > a:hover::after {
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                transform: scaleX(1);
+            }

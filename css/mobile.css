@@ -1,0 +1,55 @@
+﻿.icoMenu {
+    position: fixed;
+    display: block;
+    cursor: pointer;
+    min-height: 20px;
+    min-width: 20px;
+    max-width: 21px;
+    background-color: #222;
+}
+.mainNav {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    height: 30%;
+    left: -100%;
+    transition: transform .4s ease;
+}
+
+.mainNav.open{
+    transform: translateX(100%);
+}
+
+.mainNav ul {
+    float: right;
+    width: 100%;
+    background: #222;
+}
+
+.mainNav li > a {
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 10px 5px 10px 3px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+    .mainNav li > a:after {
+        width: 100%;
+        height: 35px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        content: '';
+        background: rgba(128, 128, 128, 0.1);
+        transform: scaleX(0);
+        transition: all .2s linear;
+    }
+
+    .mainNav li > a:hover::after {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        transform: scaleX(1);
+    }
