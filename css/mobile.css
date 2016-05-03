@@ -7,6 +7,13 @@
     max-width: 21px;
     background-color: #222;
 }
+
+.accordionBackground {
+    background-color: gold;
+    width: 100%;
+}
+
+
 .mainNav {
     position: fixed;
     text-align: center;

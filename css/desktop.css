@@ -2,6 +2,13 @@
     position: absolute;
     top: 50px;
 }
+
+.accordionBackground {
+    background-color: gold;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
     .mainNav ul {
         float: right;
         margin-right: 20px;
