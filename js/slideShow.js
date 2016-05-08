@@ -15,11 +15,13 @@
     // Float left to display horizontally, readjust .slides width
     .css({
         'float': 'left',
-        'width': slideWidth
+        'width': (100 / numberOfSlides) + "%" // using % for dynamic
+        //'width': slideWidth
     });
 
     // Set #slideInner width equal to total width of all slides
-    $('#slideInner').css('width', slideWidth * numberOfSlides);
+    //$('#slideInner').css('width', slideWidth * numberOfSlides);
+    $('#slideInner').css('width', (100 * numberOfSlides) + "%");
 
     // Insert left and right arrow controls in the DOM
     $('#slideshow')

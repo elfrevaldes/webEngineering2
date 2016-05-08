@@ -16,7 +16,6 @@
 #slideshow {
     position: relative;
     background-color: #dfdfdf;
-    border-radius: 5px;
 }
 
 .centerHor {
@@ -24,10 +23,10 @@
     margin: 0px auto;
 }
 
-#container {
+/*#container {
     width: 60%;
     float: left;
-}
+}*/
 
 .slide h2 {
     font: italic 24px Georgia, "Times New Roman", Times, serif;
@@ -64,8 +63,6 @@
     top: 0;
     left: 0;
     background: transparent url(../img/control_left.jpg) no-repeat 0 0;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
 }
 
     #leftControl:hover {
@@ -78,10 +75,6 @@
     top: 0;
     right: 0;
     background: transparent url(../img/control_right.jpg) no-repeat 0 0;
-    border-top-right-radius: 5px;
-    -webkit-border-bottom-right-radius: inherit;
-    border-bottom-right-radius: inherit;
-    : 5px;
 }
 
     #rightControl:hover {

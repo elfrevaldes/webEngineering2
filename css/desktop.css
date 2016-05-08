@@ -3,6 +3,11 @@
     top: 50px;
 }
 
+.slideShowContainer {
+    width: 40%;
+    margin-left: 25%;
+}
+
 .accordionBackground {
     background-color: gold;
     width: 80%;
@@ -20,7 +25,7 @@
     }
 
         .mainNav li > a {
-            color: black;
+            color: white;
             text-transform: uppercase;
             display: inline-block;
             padding: 4px 5px 3px 3px;
@@ -42,7 +47,7 @@
             }
 
             .mainNav li > a:hover::after {
-                border-top: 1px solid black;
-                border-bottom: 1px solid black;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
                 transform: scaleX(1);
             }

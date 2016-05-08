@@ -10,12 +10,12 @@
     <script src="js/slideShow.js"></script>
     <script src="js/basic.js"></script>
 
-    <link rel="stylesheet" href="css/slideShow.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/slideShow.css" media="screen and (min-width: 600px)    "/>
+    <link rel="stylesheet" href="css/slideShowMobile.css" media="screen and (min-width: 0px) and (max-width:600px)" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="css/basic.css" type="text/css" />
-    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen and (min-width: 0px) and (max-width:700px)" />
-    <!--<link rel="stylesheet" href="tablet.css" type="text/css" media="screen and (min-width: 400px) and (max-width: 800px)" />-->
-    <link rel="stylesheet" href="css/desktop.css" type="text/css" media="screen and (min-width: 800px)" />
+    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen and (max-width:600px)" />
+    <link rel="stylesheet" href="css/desktop.css" type="text/css" media="screen and (min-width: 600px)" />
 </head>
 <body>
     <div id="body">
@@ -27,18 +27,18 @@
                     <li><a href="#" title="Projects">Projects</a></li>
                     <li><a href="assign/index.html" title="Assignments">Assignments</a></li>
                     <li><a href="#" title="Contact">Contact</a></li>
+                    <li><a href="/process/login.html" title="Login">Login</a></li>
                 </ul>
             </nav>
         </div>
+        <br />
         <div class="slideShowContainer">
             <!-- Slideshow HTML -->
             <div id="slideshowContainer">
                 <div id="slideshow">
-                    <div id="slidesContainer" style="overflow: hidden;">           
-                            <div class="slide" style="float: left; width: 660px;">
-                                <a href="#">
-                                    <img style="margin-top:35px; margin-left:20px;" src="https://scontent-sjc2-1.xx.fbcdn.net/t31.0-8/12697140_10208968204750392_2818158436068885668_o.jpg" alt="W10" width="300" data-in-view="true">
-                                </a>
+                    <div id="slidesContainer" style="overflow: hidden;">
+                        <div class="slide">
+                            <div id="container">
                                 <h2>Elfre Valdes</h2>
                                 <p>
                                     I was born in Chile and I came to the USA about 7 years ago.
@@ -49,36 +49,69 @@
                                     <!--<a class="more" href="#">click me</a>-->
                                 </p>
                             </div>
-                            <div class="slide" style="float: left; width: 660px;">
+                            <div id="image">
                                 <a href="#">
-                                    <img style="margin-top:35px; margin-left:20px;" src="http://www.dailyfailcentral.com/sites/default/files/styles/fail/public/fail/aRV1o2Q_700b_v1.jpg?itok=0wH6KMo4" alt="W10" width="200" data-in-view="true">
+                                    <img src="https://scontent-sjc2-1.xx.fbcdn.net/t31.0-8/12697140_10208968204750392_2818158436068885668_o.jpg" alt="W10" data-in-view="true">
                                 </a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div id="container">
+                                <h2>Elfre Valdes</h2>
+                                <p>
+                                    I was born in Chile and I came to the USA about 7 years ago.
+                                    I like to play soccer and I enjoy challenge. I'm married and
+                                    I have 2 beautiful children. They are 3 and 1 years old. I have
+                                    a sister that is going to serve a mission in Mexico, Mexico city.
+                                    The rest of my immediate family is back in Chile. <br>
+                                    <!--<a class="more" href="#">click me</a>-->
+                                </p>
+                            </div>
+                            <div id="image">
+                                <a href="#">
+                                    <img src="https://scontent-sjc2-1.xx.fbcdn.net/t31.0-8/12697140_10208968204750392_2818158436068885668_o.jpg" alt="W10" data-in-view="true">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div id="container">
                                 <h2>Second tab</h2>
                                 <p>
                                     Fraternizes alphabetize endeavoured characterizations amphitheatres internationalize.
                                     Cannibalized pedestrianizing maximized overemphasize bevelled democratizes. Economize
                                     pauperizing disfavour gossipping amortization's mazourka. Decriminalizes libellers drees
                                     harmonizes updraught's lupins. <br>
-                                    <a class="more" href="#">click me</a><!--x89769.xml-->
+                                    <a class="more" href="#">click me</a>
                                 </p>
                             </div>
-                            <div class="slide" style="float: left; width: 660px;">
+                            <div id="image">
                                 <a href="#">
-                                    <img style="margin-top:35px; margin-left:20px;" src="http://www.dailyfailcentral.com/sites/default/files/styles/fail/public/fail/aRV1o2Q_700b_v1.jpg?itok=0wH6KMo4" alt="W10" width="200" data-in-view="true">
+                                    <img src="http://www.dailyfailcentral.com/sites/default/files/styles/fail/public/fail/aRV1o2Q_700b_v1.jpg?itok=0wH6KMo4" alt="W10" data-in-view="true">
                                 </a>
-                                <h2>Thrid tab</h2>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div id="container">
+                                <h2>Third tab</h2>
                                 <p>
                                     Fraternizes alphabetize endeavoured characterizations amphitheatres internationalize.
                                     Cannibalized pedestrianizing maximized overemphasize bevelled democratizes. Economize
                                     pauperizing disfavour gossipping amortization's mazourka. Decriminalizes libellers drees
                                     harmonizes updraught's lupins. <br>
-                                    <a class="more" href="#">click me</a><!--x89769.xml-->
+                                    <a class="more" href="#">click me</a>
                                 </p>
                             </div>
+                            <div id="image">
+                                <a href="#">
+                                    <img src="http://www.dailyfailcentral.com/sites/default/files/styles/fail/public/fail/aRV1o2Q_700b_v1.jpg?itok=0wH6KMo4" alt="W10" data-in-view="true">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <ul id="slideNav">
                     <li class="navItem" style="margin-left: 40px;"><a>Elfre Valdes</a></li>
+                    <li class="navItem"><a>check Tab</a></li>
                     <li class="navItem"><a>Second Tab</a></li>
                     <li class="navItem"><a>Third Tab</a></li>
                 </ul>
