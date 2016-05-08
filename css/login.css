@@ -10,8 +10,16 @@
         border: .2rem solid #28b0ab;
     }
 
-#tabs {
-    margin-left: 25%;
+@media screen and (max-width: 600px) {
+    #tabs {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #tabs {
+        margin-left: 25%;
+    }
 }
 
 #tabs b{
