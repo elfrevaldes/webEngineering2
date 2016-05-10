@@ -26,5 +26,5 @@ fwrite($fp, $password);
 fwrite($fp, $email);
 fwrite($fp, $ward);
 
-header('Location: welcome.html');
+header('Location: welcome.php');
 ?>
