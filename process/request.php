@@ -1,5 +1,6 @@
 ﻿<?php
 session_start();
+var_dump($_post);
 
 $_SESSION["name"] = htmlspecialchars($_POST["name"]);
 $_SESSION["password"] = $_POST["spassword"];
