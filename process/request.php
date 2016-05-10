@@ -7,6 +7,8 @@ $_SESSION["password"] = $_POST["spassword"];
 $_SESSION["email"] = $_POST["semail"];
 $_SESSION["ward"] = $_POST["ward"];
 
+var_dump($_SESSION);
+
 $name = 'name: '.$_SESSION["name"].PHP_EOL;
 $password = 'pass: '.$_SESSION["password"].PHP_EOL;
 $email = 'email: '.$_SESSION["email"].PHP_EOL;
