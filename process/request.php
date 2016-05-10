@@ -1,4 +1,6 @@
 ﻿<?php
+session_start();
+
 $_SESSION["name"] = htmlspecialchars($_POST["name"]);
 $_SESSION["password"] = $_POST["spassword"];
 $_SESSION["email"] = $_POST["semail"];
