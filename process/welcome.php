@@ -1,6 +1,6 @@
 ﻿<?php
     session_start();
-ini_set('display_errors',1);  error_reporting(E_ALL);
+<!--ini_set('display_errors',1);  error_reporting(E_ALL);-->
     ?>
 <!DOCTYPE html>
 <html>
@@ -34,9 +34,9 @@ ini_set('display_errors',1);  error_reporting(E_ALL);
         <br />
         <div style="margin-left: 20%;">
             <h1>Welcome</h1>
-            <p>Name: <b><?php $_SESSION["name"] ?></b></p>
-            <p>email: <b><?php $_SESSION["email"] ?></b></p>
-            <p>Ward: <b><?php $_SESSION["ward"] ?></b></p>
+            <p>Name: <b><?php echo $_SESSION["name"] ?></b></p>
+            <p>email: <b><?php echo $_SESSION["email"] ?></b></p>
+            <p>Ward: <b><?php echo $_SESSION["ward"] ?></b></p>
         </div>
     </div>
 </body>
