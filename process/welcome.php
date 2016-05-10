@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    session_start();
+    var_dump($_SESSION);
+    ?>
+<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -13,10 +17,6 @@
     <link rel="stylesheet" href="../css/desktop.css" type="text/css" media="screen and (min-width: 600px)" />
 </head>
 <body>
-    <?php
-    session_start();
-    var_dump($_SESSION);
-    ?>
     <div id="body">
         <img id="hfsbg" src="https://c2.staticflickr.com/9/8524/8552518841_44e823d100_k.jpg" width="3492" height="2100" />
         <div id="header">
