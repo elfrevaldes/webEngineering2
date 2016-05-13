@@ -59,11 +59,17 @@ function doPassMatch(p1, p2)
 
 function isPassValid(label, id)
 {
-    if (text.length < 6)
-        markInValid(label, "Please type your password");
-    else
-        markValid(label);
-    return text.length > 6;
+    if (id == "#srpassword")
+        return ($(id).val().length < 6) && doPassMatch("#srpassword", "#spassword");
+    else {
+        if ($(id).val().length < 6)
+            markInValid(label, "Password must be at least 7 characters long");
+        else
+            markValid(label);
+    }
+        
+
+    return $(id).val().length > 6;
 }
 
 // Checks whether the form is valid
@@ -76,8 +82,6 @@ function fullValidation(form) {
         if (!isPassValid("#signupLbl", "#spassword"))
             return false;
         if (!isPassValid("#signupLbl", "#srpassword"))
-            return false;
-        if (!doPassMatch("#srpassword", "#spassword"))
             return false;
         $("#signupBtn").disabled = false;
     }
