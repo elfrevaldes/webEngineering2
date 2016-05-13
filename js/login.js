@@ -47,9 +47,18 @@ function isEmailValid(label, id) {
     }
 }
 
+function doPassMatch(p1, p2)
+{
+    if ($(p1).val() == $(p2).val())
+        markValid("#signupLbl");
+    else
+        markInValid("#signupLbl", "Passwords do not match");
+
+    return $(p1).val() == $(p2).val();
+}
+
 function isPassValid(label, id)
 {
-    var text = $(id).val();
     if (text.length < 6)
         markInValid(label, "Please type your password");
     else
@@ -68,6 +77,8 @@ function fullValidation(form) {
             return false;
         if (!isPassValid("#signupLbl", "#srpassword"))
             return false;
+        if (!doPassMatch("#srpassword", "#spassword"))
+            return false;
         $("#signupBtn").disabled = false;
     }
     if (form == "login")
@@ -79,7 +90,6 @@ function fullValidation(form) {
         if (!isPassValid("#password")) {
             return false;
         }
-
         $("#loginBtn").disabled = false;
     }
     return true; //isValid;
