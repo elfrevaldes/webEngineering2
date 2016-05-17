@@ -1,5 +1,9 @@
 ﻿<?php
 session_start();
+    if($_post['signup']){
+    include_once
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,7 +63,7 @@ session_start();
                         <input id="srpassword" name="srpassword" type="password" placeholder="Repeat Password" onchange="isPassValid('#signupLbl', '#srpassword');" /> <b>*</b>
                         <input name="action" type="hidden" value="signup" />
                     </p>
-                    <p><input id="signupBtn" type="submit" value="Sign up" /></p>
+                    <p><input id="signupBtn" name="signup" type="submit" value="Sign up" /></p>
                 </form>
             </div>
         </div>

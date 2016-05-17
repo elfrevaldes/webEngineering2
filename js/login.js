@@ -60,15 +60,13 @@ function doPassMatch(p1, p2)
 function isPassValid(label, id)
 {
     if (id == "#srpassword")
-        return ($(id).val().length < 6) && doPassMatch("#srpassword", "#spassword");
+        return ($(id).val().length > 6) && doPassMatch("#srpassword", "#spassword");
     else {
         if ($(id).val().length < 6)
             markInValid(label, "Password must be at least 7 characters long");
         else
             markValid(label);
     }
-        
-
     return $(id).val().length > 6;
 }
 
