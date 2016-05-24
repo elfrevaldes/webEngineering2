@@ -1,6 +1,7 @@
 ﻿<?php
-require('database.php');
-session_start();
+	session_start();
+	if(isset($_SESSION["email"]))
+		header('Location: process/welcome.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,26 +33,28 @@ session_start();
     </div>
     <div id="body">
         <img id="hfsbg" src="https://c7.staticflickr.com/9/8239/8543660542_bc565a3ae4_k.jpg" width="1980" height="1360" />
-        <div id="tabs">
+        <div id="tabs">	
             <ul>
                 <li><span id="loginLink" class="active link" onclick="openTab('login-tab');">Login</span></li>
                 <li><span id="signupLink" class="inactive link" onclick="openTab('signup-tab');">Sign up</span></li>
             </ul>
             <div id="login-tab">
                 <label id="loginLbl"></label>
-                <form action="" method="post" onsubmit="return fullValidation('login');">
+				<label>Please use: test</label>
+                <form action="process/process.php" method="post" onsubmit="return fullValidation('login');">
                     <p>
-                        <input id="email" name="email" type="text" placeholder="Email" onchange="isEmailValid('#loginLbl', '#email');" /><b>*</b>
+                        <input id="email" name="email" type="text" placeholder="Email" onchange="isEmailValid('#loginLbl', '#email');" value="elfre@gmail.com"/><b>*</b>
                     </p>
+					<label>Please use: test</label>
                     <p>
-                        <input id="password" name="password" type="password" placeholder="Password" onchange="isPassValid('#loginLbl', '#password');" /><b>*</b>
+                        <input id="password" name="password" type="password" placeholder="Password" onchange="isPassValid('#loginLbl', '#password');" value="pass1234"/><b>*</b>
                     </p>
                     <p><input id="loginBtn" type="submit" value="Login" /></p>
                 </form>
             </div>
             <div id="signup-tab">
                 <label id="signupLbl"></label>
-                <form action="process/request.php" method="post" onsubmit="return (fullValidation('signup'));">
+                <form action="process/signup.php" method="post" onsubmit="return (fullValidation('signup'));">
                     <p><input id="name" name="name" type="text" placeholder="Name" /><b>*</b></p>
                     <p><input id="semail" name="semail" type="text" placeholder="Email" onchange="isEmailValid('#signupLbl', '#semail');" /><b>*</b></p>
                     <p><input id="ward" name="ward" type="text" placeholder="Ward Name" /></p>
