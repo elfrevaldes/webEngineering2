@@ -1,6 +1,5 @@
 ﻿<?php
-require('database.php');
-echo 'User' . $user;
+/*require('database.php');*/
 session_start();
 ?>
 <!DOCTYPE html>
