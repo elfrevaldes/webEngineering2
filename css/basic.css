@@ -1,4 +1,9 @@
-﻿body {
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
     font-family: 'Museo Sans', sans-serif;
     margin: 0px; /* don't want space wasted*/
 }
@@ -30,16 +35,19 @@ li a {
 }
 
 #body {
-    margin-bottom: 100px;
-    min-height: 70vh; /* so that I can have the footer at the bottom */
+    /*margin-bottom: 100px;*/
+    min-height: 82vh; /* so that I can have the footer at the bottom */
     position: relative;
 }
 
 #footer {
-    min-height: 60px;
-    bottom: 0px;
+    min-height: 100px;
 }
 
+#banner{
+  min-width: 300px;
+  background-color: rgba(68, 49, 49, .7);
+}
 .clearfooter {
     clear: both;
 }

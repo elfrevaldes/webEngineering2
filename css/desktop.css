@@ -1,6 +1,6 @@
 ﻿.mainNav {
     position: absolute;
-    top: 50px;
+    top: 30px;
 }
 
 .slideShowContainer {
@@ -9,9 +9,16 @@
 }
 
 #header {
-    min-height: 100px;
+    width: 100%;
+    min-height: 80px;
     background: linear-gradient(to right, rgba(128, 128, 128, 0) 70%, rgba(0,0,0,1));
 }
+
+#footer {
+    padding-top: 18px;
+    background: linear-gradient(to left, rgba(68, 49, 49, 0) 70%, rgba(0,0,0,1));
+    margin-bottom: -30px;
+  }
 
 .accordionBackground {
     background-color: gold;
@@ -43,7 +50,7 @@
                 width: 100%;
                 height: 20px;
                 position: absolute;
-                bottom: 2px;
+                bottom: 0px;
                 left: 0px;
                 content: '';
                 background: rgba(226, 103, 103, 0.03);

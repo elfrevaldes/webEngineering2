@@ -1,4 +1,4 @@
-﻿<?php session_start(); ?>
+﻿<?php header("Location: login.html"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,9 +31,9 @@
         <br />
         <div style="margin-left: 20%;">
             <h1>Welcome</h1>
-            <p>Name: <b><?php echo $_SESSION["name"] ?></b></p>
-            <p>email: <b><?php echo $_SESSION["email"] ?></b></p>
-            <p>Ward: <b><?php echo $_SESSION["ward"] ?></b></p>
+            <p>Name: <b><?php echo $_SESSION["name"]; ?></b></p>
+            <p>email: <b><?php echo $_SESSION["email"]; ?></b></p>
+            <p>Ward: <b><?php echo $_SESSION["ward"]; ?></b></p>
         </div>
     </div>
 </body>
