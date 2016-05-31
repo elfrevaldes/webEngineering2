@@ -1,3 +1,12 @@
+<?php
+   session_start();
+   if (isset($_SESSION["email"]))
+   	header('Location: process/welcome.php');
+   // the connection
+   // we need the access to the db but only one time
+   include_once('process/database.php');
+   $db = dbConnect();
+?>
 <!DOCTYPE html>
 <html>
 <head>

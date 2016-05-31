@@ -1,11 +1,11 @@
 <?php
-	require('settings.php');
 	function dbConnect()
 	{
 		$dbName='php';
 		$openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST');
 		if ($openShiftVar === null || $openShiftVar == "")
 		{
+			require('settings.php'); // need for credentials
 			// Not in the openshift environment
 			//$dbHost = "127.4.13.130";
 			$dbHost = "127.0.0.1";
