@@ -13,7 +13,6 @@
 	  // security
 	  $email = sanitizeInput($_POST['email']);
 	  $pass = sanitizeInput($_POST['password']);
-     $pass = password_hash($pass, PASSWORD_DEFAULT);
 	  // checking if the user privided exist
 	  try
 	  {
