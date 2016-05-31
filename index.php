@@ -9,7 +9,6 @@
 
 	if(isset($_POST['loginBtn']))
 	{
-	  include_once('process/settings.php');
 	  // security
 	  $email = sanitizeInput($_POST['email']);
 	  $pass = sanitizeInput($_POST['password']);
