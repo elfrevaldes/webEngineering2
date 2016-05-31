@@ -28,4 +28,13 @@
 		}
 		return $db;
 	}
+
+	function sanitizeInput($word)
+   {
+     $result = htmlspecialchars($word);
+     $result = strip_tags($result);
+     $result = stripcslashes($result);
+     //$result = mysqli_real_escape_string($result);
+     return $result;
+   }
 ?>
