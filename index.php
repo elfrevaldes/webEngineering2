@@ -51,6 +51,36 @@
         echo 'Error while loging in.';
      }
    }
+
+    if (isset($_POST['signupBtn']))
+    {
+		// security
+		$semail = sanitizeInput($_POST['semail']);
+      try
+   	{
+   		$query = 'SELECT * FROM user WHERE email=:email';
+   		$statement = $db->prepare($query);
+   		$statement->bindValue(':email', $semail, PDO::PARAM_STR);
+   		$result = $statement->execute();
+   		$result = $statement->fetch();
+
+   		if (!$result)
+   		{
+            $_SESSION['name'] = sanitizeInput($_POST["name"]);
+            $_SESSION['last'] = sanitizeInput($_POST["last"]);
+            $_SESSION['display_name'] = sanitizeInput($_POST["name"]) .' '. sanitizeInput($_POST["last"]);
+            $_SESSION['email'] = sanitizeInput($_POST["semail"]);
+            $_SESSION['pass'] = sanitizeInput($_POST["spassword"]);
+            $_SESSION['ward_name'] = sanitizeInput($_POST["ward"]);
+
+				header("Location: process/process.php");
+         }
+      }
+      catch(Exception $ex)
+   	{
+   		echo 'Error while loging in.';
+   	}
+   }
 ?>
 <!DOCTYPE html>
 <html>
