@@ -7,14 +7,14 @@
    include_once('process/database.php');
    $db = dbConnect();
 
-	if(isset($_POST['loginBtn']))
-	{
+	//if(isset($_POST['loginBtn']))
+	//{
 	  // security
-	  $email = sanitizeInput($_POST['email']);
-	  $pass = sanitizeInput($_POST['password']);
+	//  $email = sanitizeInput($_POST['email']);
+	//  $pass = sanitizeInput($_POST['password']);
 	  // checking if the user privided exist
-	  try
-	  {
+	//  try
+	//  {
    		// $query = 'SELECT id, display_name, pass, email, ward_id FROM user WHERE email=:email';
    	   // $statement = $db->prepare($query);
    		// $statement->bindValue(':email', $email, PDO::PARAM_STR);
@@ -43,13 +43,12 @@
 	      //       header("Location: process/welcome.php");
 	      // 	}
 			// }
-      }
-      catch(Exception $ex)
-      {
-         echo 'Error while loging in.';
-      }
-   }
- }
+   //   }
+   //   catch(Exception $ex)
+   //   {
+   //      echo 'Error while loging in.';
+   //   }
+   //}
 ?>
 <!DOCTYPE html>
 <html>
