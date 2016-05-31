@@ -138,7 +138,7 @@
                     <p><input id="semail" name="semail" type="text" placeholder="Email" onchange="isEmailValid('#signupLbl', '#semail');" /><b>*</b></p>
                     <p><input id="ward" name="ward" type="text" placeholder="Add new Ward" onchange="isValidWard();" style="display: none;"/>
 										<select id="ward_name" onchange="addNewWard();">
-											<option value='blank' disabled="true" selected></option>
+											<option value='blank' disabled="true" selected>Select your ward</option>
 											<?php
 											try{
 												$query = 'SELECT * FROM ward';
