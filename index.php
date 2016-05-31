@@ -141,21 +141,21 @@
 											<option value='blank' disabled="true" selected></option>
 											<?php
 											try{
-												//$query = 'SELECT * FROM ward';
-											   //$stmt = $db->prepare($query);
-											   //$stmt->execute();
+												$query = 'SELECT * FROM ward';
+											   $stmt = $db->prepare($query);
+											   $stmt->execute();
 
-                                    //$wards = $stmt->fetchAll(PDO::FETCH_ASSOC); // key value pairs
-												//foreach ($wards as $ward) {
-												//		$name = $ward['name'];
-										      //	   $id = $ward['id'];
-												//		echo "<option value='$id'>$name</option>";
-												//	}
+                                    $wards = $stmt->fetchAll(PDO::FETCH_ASSOC); // key value pairs
+												foreach ($wards as $ward) {
+													$name = $ward['name'];
+									      	   $id = $ward['id'];
+													echo "<option value='$id'>$name</option>";
+												}
 												echo "<option value='newWard'>Add New Ward</option>";
 											}
 											catch(Exception $ex)
 											{
-												 echo 'Error while requesting wards.';
+												echo 'Error while requesting wards.';
 											}
 											?>
 										</select><b>*</b>
