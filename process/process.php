@@ -5,7 +5,7 @@
 		  header('Location: ../index.php'); // send them back
     }
 
-   require('database.php');
+   include_once('database.php');
    $db = dbConnect();
    // finding the ward
    $query = 'SELECT id FROM ward WHERE name = :name';
