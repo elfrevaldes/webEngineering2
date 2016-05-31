@@ -9,11 +9,10 @@
 
 	if(isset($_POST['loginBtn']))
 	{
-      echo "SET";
-   }
 	  // security
-	//  $email = sanitizeInput($_POST['email']);
-	//  $pass = sanitizeInput($_POST['password']);
+	  $email = sanitizeInput($_POST['email']);
+	  $pass = sanitizeInput($_POST['password']);
+  }
 	  // checking if the user privided exist
 	//  try
 	//  {
