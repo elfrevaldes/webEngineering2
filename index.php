@@ -6,6 +6,51 @@
    // we need the access to the db but only one time
    include_once('process/database.php');
    $db = dbConnect();
+
+	if(isset($_POST['loginBtn']))
+	{
+	  include_once('process/settings.php');
+	  // security
+	  $email = sanitizeInput($_POST['email']);
+	  $pass = sanitizeInput($_POST['password']);
+	  // checking if the user privided exist
+	  try
+	  {
+   		$query = 'SELECT id, display_name, pass, email, ward_id FROM user WHERE email=:email';
+   	   $statement = $db->prepare($query);
+   		$statement->bindValue(':email', $email, PDO::PARAM_STR);
+   	   $result = $statement->execute();
+   		// requesting the user
+   		$user = $statement->fetch();
+   	   if ($user)
+	      {
+				// checking that password match
+	        if ($pass == $user[2])
+	        {
+					$_SESSION["id"] = $user[0];
+	            $_SESSION["display_name"] = $user[1];
+	            $_SESSION["email"] = $user[3];
+	            $_SESSION["ward_id"] = $user[4];
+
+	            // finding the ward name
+	            $que = 'SELECT name FROM ward WHERE id = :id';
+	            $sta = $db->prepare($que);
+	            $sta->bindValue(':id', $user[4], PDO::PARAM_INT);
+	            $ward = $sta->execute();
+	            $wardName = $sta->fetch();
+
+	            $_SESSION["ward_name"] = $wardName[0];
+
+	            header("Location: process/welcome.php");
+	      	}
+			}
+      }
+      catch(Exception $ex)
+      {
+         echo 'Error while loging in.';
+      }
+   }
+ }
 ?>
 <!DOCTYPE html>
 <html>
