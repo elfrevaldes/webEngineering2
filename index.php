@@ -7,8 +7,10 @@
    include_once('process/database.php');
    $db = dbConnect();
 
-	//if(isset($_POST['loginBtn']))
-	//{
+	if(isset($_POST['loginBtn']))
+	{
+      echo "SET";
+   }
 	  // security
 	//  $email = sanitizeInput($_POST['email']);
 	//  $pass = sanitizeInput($_POST['password']);
