@@ -110,7 +110,7 @@
 // 			 echo 'Error while loging in.';
 // 		}
 // }
-?>
+?> // adding latter
 <!DOCTYPE html>
 <html>
 <head>
