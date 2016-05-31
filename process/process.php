@@ -1,72 +1,42 @@
 ﻿<?php
-  require('database.php');
   session_start();
-
   // cheacking that they actually complete the signup part
-  if (!isset($_POST['email']) || !isset($_POST["password"])) {
+  if (!isset($_SESSION["email"])){
 		  header('Location: ../index.php'); // send them back
-	}
-  
-  // security              
-  $passSpeChar = htmlspecialchars($_POST["password"]);
-  $passSqlInje = strip_tags($passSpeChar);
-    
-    echo "email is : " . $_POST["email"];
-    echo "<br/>";
-  $emailSpeChar = htmlspecialchars($_POST["email"]);
-  $emailSqlInje = htmlspecialchars($emailSpeChar);
-    
-    echo "sqlinject is : " . $emailSqlInje;
-    echo "<br/>";
+    }
 
+   require('database.php');
+   $db = dbConnect();
+   // finding the ward
+   $query = 'SELECT id FROM ward WHERE name = :name';
+   $statement = $db->prepare($query);
+   $statement->bindValue(':name', $_SESSION['ward_name'], PDO::PARAM_STR);
+   $result = $statement->execute();
+   $result = $statement->fetch();
 
-  try {
-      $db = dbConnect();
-      
-      $query = 'SELECT * FROM user WHERE email = :email';
-      
-      $statement = $db->prepare($query);
-		  $statement->bindValue(':email', $emailSqlInje, PDO::PARAM_STR);
-		  $result = $statement->execute();
-      echo "results:  " . $result;
-      echo "<br/>";
-      if ($result)
-		  {
-        $user = $statement->fetch();
-        
-        echo "caca". $user;
-        echo "<br/>";
-      }
-      else
-        echo "Nop sorry";
-      
-      //$_SESSION["displayName"] = "Elfre Valdes";
-      //$_SESSION["email"] = "elfre@gmail.com";
-      //$_SESSION["ward"] = "myWard"; 
-      
-      //$statement = mysqli_prepare($db, 'SELECT * FROM secretvo_sv WHERE email = ?');
-      //mysqli_stmt_bind_param($statement, "s", $email);
-      //mysqli_stmt_execute($statement);  
-      //mysqli_stmt_store_result($statement);
-      //mysqli_stmt_bind_result($statement,$id, $firstName, $lastName, $displayName, $email, $password, $wardId);
-      //$profile = array();
-      
-      //while (mysqli_stmt_fetch($statement)) {
-      //  $profile["id"] = $id;
-      //  $profile["firstName"] = $firstName;
-      //  $profile["lastName"] = $lastName;
-      //  $profile["displayName"] = $displayName;
-      //  $profile["email"] = $email;
-      //  $profile["password"] = $password;
-      //  $profile["wardId"] = $wardId;
-     //}
-     //$_SESSION["displayName"] = $profile["displayName"];
-     //$_SESSION["email"] = "";
-     //$_SESSION["ward"] = ""; 
-   }
-   catch(Exception $ex)
+   // adding a new ward
+   if($result[0] == "")
    {
-      echo 'Could not login.';
-   }    
-  //header('Location: welcome.php');
-?>
+      $query = "INSERT INTO ward(id, name) VALUES (NULL, :name)";
+      $stmt = $db->prepare($query);
+      $stmt->bindValue(':name', $_SESSION['ward_name'], PDO::PARAM_STR);
+      $stmt->execute();
+      // getting the id
+      $_SESSION['ward_id'] = $db->lastInsertId();
+   }
+   else
+    $_SESSION["ward_id"] = $result[0];
+
+   $query = "INSERT INTO user(id, first_name, last_name, display_name, email, pass, ward_id) VALUES (NULL, :name, :last, :display, :email, :pass, :ward_id)";
+
+   $stmt = $db->prepare($query);
+   $stmt->bindValue(':name', $_SESSION['name'], PDO::PARAM_STR);
+   $stmt->bindValue(':last', $_SESSION['last'], PDO::PARAM_STR);
+   $stmt->bindValue(':display', $_SESSION['display_name'], PDO::PARAM_STR);
+   $stmt->bindValue(':email', $_SESSION['email'], PDO::PARAM_STR);
+   $stmt->bindValue(':pass', $_SESSION['pass'], PDO::PARAM_STR);
+   $stmt->bindValue(':ward_id', $_SESSION['ward_id'], PDO::PARAM_INT);
+   $stmt->execute();
+   $_SESSION["id"] = $db->lastInsertId();
+   header("Location: welcome.php");
+ ?>

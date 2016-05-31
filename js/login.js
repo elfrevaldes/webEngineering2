@@ -2,6 +2,26 @@
     $('#signup-tab').css('display', 'none');
 });
 
+function addNewWard()
+{
+  if ($("#ward_name option:selected").text() == "Add New Ward")
+  {
+    $('#ward').css('display', 'initial');
+    $("#ward").val("");
+    $('#ward').focus();
+  }
+  else {
+    $('#ward').css('display', 'none');
+    markValid(SIGNUP);
+    //alert($("#ward_name option:selected").text());
+    //alert($("#ward_name").val());
+    $("#ward").val($("#ward_name option:selected").text());
+  }
+}
+// global lables
+var SIGNUP = "#signupLbl";
+var LOGIN = "#loginLbl";
+
 function openTab(tab) {
     if(tab == "signup-tab")
     {
@@ -22,7 +42,7 @@ function openTab(tab) {
 
         $('#signup-tab').css('display', 'none');
         $('#login-tab').css('display', 'block');
-        
+
     }
 }
 
@@ -50,9 +70,9 @@ function isEmailValid(label, id) {
 function doPassMatch(p1, p2)
 {
     if ($(p1).val() == $(p2).val())
-        markValid("#signupLbl");
+        markValid(SIGNUP);
     else
-        markInValid("#signupLbl", "Passwords do not match");
+        markInValid(SIGNUP, "Passwords do not match");
 
     return $(p1).val() == $(p2).val();
 }
@@ -70,29 +90,72 @@ function isPassValid(label, id)
     return $(id).val().length > 6;
 }
 
+function isValidName(label, id)
+{
+  if ($(id).val().length < 3)
+  {
+    markInValid(label, "Name/Last must be at least 3 characters long");
+    return false;
+  }
+  else {
+    markValid(label);
+    return true;
+  }
+}
+
+function isValidWard()
+{
+  if ($("#ward_name").val() == "newWard")
+  {
+    if(!isValidName(SIGNUP,"#ward"))
+    {
+      markInValid(SIGNUP, "The name of the ward is too short");
+      return false;
+    }
+    else {
+      markValid(SIGNUP);
+    }
+  }
+  // they have not selectec a ward
+  if  ($("#ward_name option:selected").text() == "")
+  {
+    markInValid(SIGNUP, "Please select a ward");
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
 // Checks whether the form is valid
 function fullValidation(form) {
     var isValid = true;
     if (form == "signup") {
         $("#signupBtn").disabled = true;
-        if (!isEmailValid("#signupLbl", "#semail"))
+        if (!isValidName(SIGNUP, "#name"))
             return false;
-        if (!isPassValid("#signupLbl", "#spassword"))
+        if (!isValidName(SIGNUP, "#last"))
             return false;
-        if (!isPassValid("#signupLbl", "#srpassword"))
+        if (!isEmailValid(SIGNUP, "#semail"))
             return false;
-        $("#signupBtn").disabled = false;
+        if (!isValidWard())
+            return false;
+        if (!isPassValid(SIGNUP, "#spassword"))
+            return false;
+        if (!isPassValid(SIGNUP, "#srpassword"))
+            return false;
+        $("#signupBtn").css('disabled', 'false');
     }
     if (form == "login")
     {
         $("#loginBtn").disabled = true;
-        if (!isEmailValid("#loginLbl", "#email"))
+        if (!isEmailValid(LOGIN, "#email"))
             return false;
 
         if (!isPassValid("#password")) {
             return false;
         }
-        $("#loginBtn").disabled = false;
+        $("#loginBtn").css('disabled', 'false');
     }
     return true; //isValid;
 }

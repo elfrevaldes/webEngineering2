@@ -1,6 +1,13 @@
 ﻿#tabs p{
     padding: 5px;
 }
+#tabs select{
+  padding: 8px;
+  border-radius: 5px;
+}
+#ward{
+  display: inline;
+}
 input[type="submit"] {
     color: #166888;
     border: .2rem solid #166888;
@@ -61,7 +68,7 @@ input[type="submit"] {
 #login-tab, #signup-tab {
     clear: both;
     background-color: rgba(110, 182, 182, 0.30);
-    max-width: 400px;
+    max-width: 410px;
     padding: 10px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -76,7 +83,7 @@ input[type="text"], input[type="password"] {
     border-radius: 3px;
     transition: box-shadow 0.3s, border 0.3s, width 1s;
    -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
-    
+
 }
 
     input[type="text"]:focus,

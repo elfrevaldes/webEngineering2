@@ -3,17 +3,18 @@
 	function dbConnect()
 	{
 		$dbName='php';
-
 		$openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST');
 		if ($openShiftVar === null || $openShiftVar == "")
 		{
 			// Not in the openshift environment
-			$dbHost = "127.4.13.130";
+			//$dbHost = "127.4.13.130";
+			$dbHost = "127.0.0.1";
 			$dbUser = getLocalUser();
 			$dbPassword = getLocalPass();
 		}
 		else
 		{
+			echo "Openshift" ;
 			// In the openshift environment
 			$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
 			$dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');

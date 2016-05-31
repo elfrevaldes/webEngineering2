@@ -14,6 +14,7 @@ web.Release.config
 web.config
 webEngineering2.csproj
 webEngineering2.sln
+settings.php
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
