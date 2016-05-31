@@ -12,16 +12,21 @@
 	  // security
 	  $email = sanitizeInput($_POST['email']);
 	  $pass = sanitizeInput($_POST['password']);
-  }
+
 	  // checking if the user privided exist
-	//  try
-	//  {
-   		// $query = 'SELECT id, display_name, pass, email, ward_id FROM user WHERE email=:email';
-   	   // $statement = $db->prepare($query);
-   		// $statement->bindValue(':email', $email, PDO::PARAM_STR);
-   	   // $result = $statement->execute();
-   		// // requesting the user
-   		// $user = $statement->fetch();
+	  try
+	  {
+   		$query = 'SELECT id, display_name, pass, email, ward_id FROM user WHERE email=:email';
+   	   $statement = $db->prepare($query);
+   		$statement->bindValue(':email', $email, PDO::PARAM_STR);
+   	   $result = $statement->execute();
+   		// requesting the user
+   		$user = $statement->fetch();
+      }
+      catch(Exception $ex)
+      {
+        echo 'Error while loging in.';
+      }
    	   // if ($user)
 	      // {
 			// 	// checking that password match
