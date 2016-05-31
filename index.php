@@ -5,6 +5,7 @@
    // the connection
    // we need the access to the db but only one time
    include_once('process/database.php');
+   include_once('process/password.php');
    $db = dbConnect();
 
 	if(isset($_POST['loginBtn']))
@@ -12,7 +13,7 @@
 	  // security
 	  $email = sanitizeInput($_POST['email']);
 	  $pass = sanitizeInput($_POST['password']);
-
+     $pass = password_hash($pass, PASSWORD_DEFAULT);
 	  // checking if the user privided exist
 	  try
 	  {
@@ -26,7 +27,8 @@
    	   if ($user)
 	      {
 				// checking that password match
-	        if ($pass == $user[2])
+           if (password_verify($pass, $user[2]))
+	        //if ($pass == $user[2])
 	        {
 					$_SESSION["id"] = $user[0];
 	            $_SESSION["display_name"] = $user[1];
@@ -70,7 +72,7 @@
             $_SESSION['last'] = sanitizeInput($_POST["last"]);
             $_SESSION['display_name'] = sanitizeInput($_POST["name"]) .' '. sanitizeInput($_POST["last"]);
             $_SESSION['email'] = sanitizeInput($_POST["semail"]);
-            $_SESSION['pass'] = sanitizeInput($_POST["spassword"]);
+            $_SESSION['pass'] = password_hash(sanitizeInput($_POST["spassword"]), PASSWORD_DEFAULT);
             $_SESSION['ward_name'] = sanitizeInput($_POST["ward"]);
 
 				header("Location: process/process.php");
