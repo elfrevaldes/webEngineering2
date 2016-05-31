@@ -45,6 +45,7 @@
 	            header("Location: process/welcome.php");
 	      	}
 			}
+      }
      catch(Exception $ex)
      {
         echo 'Error while loging in.';
