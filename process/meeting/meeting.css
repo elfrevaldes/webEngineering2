@@ -1,0 +1,37 @@
+body{
+   background-color: grey;
+}
+.padding{
+   min-width: 10%;
+   color: grey;
+   float: left;
+}
+.meeting_container{
+   float: left;
+   min-width: 80%;
+}
+
+.head-title{
+   padding-top: 10px !important;
+   padding-bottom: 10px !important;
+   font-style: italic;
+}
+.head{
+   display: block;
+   border-radius: 5px;
+   border: solid 2px black;
+}
+.head_left{
+   float: left;
+   width: 75%;
+   margin-right: 5px;
+   border-radius: 5px;
+   border: solid 2px black;
+}
+.head_right{
+   float: left;
+   width⌐: 100%;
+   margin-left: 5px;
+   border-radius: 5px;
+   border: solid 2px black;
+}

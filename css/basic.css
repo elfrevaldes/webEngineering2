@@ -3,11 +3,24 @@
     padding: 0px;
 }
 
-body {
+html, body {
     font-family: 'Museo Sans', sans-serif;
+    height: 100%;
     margin: 0px; /* don't want space wasted*/
 }
-
+.body{
+   min-height: 93%;
+   height: auto !important;
+   height: 100%;
+   margin: 0 auto -4em;
+}
+.footer{
+   height: 4em;
+   margin-bottom: -20px;
+}
+.push{
+   margin-top: 10px;
+}
 h3 {
     color: white;
 }
@@ -32,31 +45,4 @@ li a {
     z-index: -10; /* back item */
     min-height: 100%;
     min-width: 400px;
-}
-
-#body {
-    /*margin-bottom: 100px;*/
-    min-height: 82vh; /* so that I can have the footer at the bottom */
-    position: relative;
-}
-
-#footer {
-    min-height: 100px;
-}
-
-#banner{
-  min-width: 300px;
-  background-color: rgba(68, 49, 49, .7);
-}
-.clearfooter {
-    clear: both;
-}
-
-.mainNav {
-    left: 0;
-    right: 0;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: normal;
-    z-index: 10;
 }

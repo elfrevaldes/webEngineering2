@@ -8,6 +8,8 @@
    include_once('process/password.php');
    $db = dbConnect();
 
+   include_once('helperFunctions.php');
+
 	if(isset($_POST['loginBtn']))
 	{
 	  // security
@@ -86,33 +88,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
     <title>Bishopric Planner</title>
-    <link rel="shortcut icon" href="img/ico.ico" />
-
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="js/basic.js"></script>
-    <script src="js/login.js"></script>
-
-    <link rel="stylesheet" href="css/basic.css" type="text/css" />
+    <?php writeHead(); ?>
     <link rel="stylesheet" href="css/login.css" type="text/css" />
-    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen and (max-width:600px)" />
-    <link rel="stylesheet" href="css/desktop.css" type="text/css" media="screen and (min-width: 600px)" />
+    <script src="js/login.js"></script>
 </head>
 <body>
 	<img id="hfsbg" src="https://c7.staticflickr.com/9/8239/8543660542_bc565a3ae4_k.jpg" width="1980" height="1360" />
-    <div id="header">
-        <span class="icoMenu"></span>
-        <nav class="mainNav">
-            <ul>
-                <li><a href="#" title="Projects">Projects</a></li>
-                <li><a href="assign/index.html" title="Assignments">Assignments</a></li>
-                <li><a href="#" title="Contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div id="body">
+    <?php writeNav("", "Home"); ?>
+    <div class="body">
         <div id="tabs">
             <ul>
                 <li><span id="loginLink" class="active link" onclick="openTab('login-tab');">Login</span></li>
@@ -171,7 +155,6 @@
         </div>
     </div>
     <!-- end of the body -->
-    <div class="clearfooter"></div>
-    <div id="footer"><h3>There will be something here in future updates</h3></div>
+    <?php writeFooter(); ?>
 </body>
 </html>
