@@ -22,7 +22,7 @@ input[type="submit"] {
 
 @media screen and (max-width: 600px) {
     #tabs {
-        margin-left: 5%;
+        max-width: 100%;
     }
 }
 
@@ -64,7 +64,11 @@ input[type="submit"] {
 .active {
     background-color: rgba(110, 182, 182, 0.30);
 }
+@media screen and (max-width: 370px) {
+   login-tab, #signup-tab {
 
+    }
+}
 #login-tab, #signup-tab {
     clear: both;
     background-color: rgba(110, 182, 182, 0.30);
@@ -90,7 +94,7 @@ input[type="text"], input[type="password"] {
     input[type="text"].focus,
     input[type="password"]:focus,
     input[type="password"].focus {
-        width: 90%;
+        width: 80%;
         border: solid 1px #707070;
         box-shadow: 0 0 5px 1px #969696;
     }
