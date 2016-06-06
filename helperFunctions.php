@@ -42,7 +42,7 @@
       echo "              <ul class='dropdown-menu'>\n";
       echo "                 <li><a href='#' title='Facebook'>Facebook</a></li>\n";
       echo "                 <li><a href='#' title='Google Plus'>Google Plus</a></li>\n";
-      echo "                 <li><a href='#' title='Linkedin'>Linkedin</a></li>\n";
+      echo "                 <li><a href='https://www.linkedin.com/in/elfre-valdes-7080685a?' title='Linkedin'>Linkedin</a></li>\n";
       echo "              </ul>\n";
       echo "           </li>\n";
 
