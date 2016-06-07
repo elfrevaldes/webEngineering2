@@ -17,6 +17,14 @@
 	$stmt->execute();
 	$meeting = $stmt->fetch(PDO::FETCH_ASSOC);
 
+	$id = $meeting['meeting_prayer'];
+	$query = "SELECT * FROM member WHERE id=:id";
+	$stmt = $db->prepare($query);
+	$stmt->bindValue(":id", $id, PDO::PARAM_INT);
+	$stmt->execute();
+	$name = $stmt->fetch(PDO::FETCH_ASSOC);
+	$prayer = $name['first_name']. " " . $name['last_name'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,11 +53,7 @@
                               <div class="row">
                                  <label class="control-label col-md-3" for="prayer">Prayer</label>
                                  <div class="col-md-9">
-                                    <input class="form-control" type="text" name="prayer" value="
-												<?php
-													$meeting['meeting_prayer'];
-												?>
-												"/>
+                                    <input class="form-control" type="text" name="prayer" value="ELFRE"/>
                                  </div>
                               </div>
                               <div class="row">
