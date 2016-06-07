@@ -10,6 +10,13 @@
 	include_once('../database.php');
    include_once('../password.php');
    $db = dbConnect();
+	$id = $_GET['id'];
+	$query = "SELECT * FROM meeting WHERE id=:id";
+	$stmt = $db->prepare($query);
+	$stmt->bindValue(":id", $id, PDO::PARAM_INT);
+	$stmt->execute();
+	$meeting = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +45,11 @@
                               <div class="row">
                                  <label class="control-label col-md-3" for="prayer">Prayer</label>
                                  <div class="col-md-9">
-                                    <input class="form-control" type="text" name="prayer" value=""/>
+                                    <input class="form-control" type="text" name="prayer" value="
+												<?php
+													$meeting['meeting_prayer'];
+												?>
+												"/>
                                  </div>
                               </div>
                               <div class="row">

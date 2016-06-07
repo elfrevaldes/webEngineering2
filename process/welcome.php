@@ -42,8 +42,8 @@
 			    	foreach ($meetings as $meeting) {
 			       $id = $meeting['id'];
 			       $date = $meeting['date'];
-			       //echo "<li><a href='meeting.php?id=$id'> $date</a></li>";
-					 echo "<li><a href='meeting/meeting.php'> Date $date </a></li>"; //meeting.php?id=1
+			       echo "<li><a href='meeting/meeting.php?id=$id'> Date $date</a></li>";
+					 //echo "<li><a href='meeting/meeting.php'> Date $date </a></li>"; //meeting.php?id=1
 					}
 				 }
 		   ?>
