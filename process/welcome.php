@@ -5,6 +5,10 @@
 		header('Location: ../index.php');
 	}
 	include_once('../helperFunctions.php');
+
+	include_once('database.php');
+   include_once('password.php');
+   $db = dbConnect();
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,18 +28,28 @@
         </div>
 			<div style="margin-top: 20px; margin-left: 20%; max-width: 500px;">
 		    <ul>
-		    <?php
-		    //foreach ($movies as $movie) {
-		    //  $title = $movie['title'];
-		    //  $year = $movie['year'];
-		    //  $id = $movie['id'];
-		      //echo "<li><a href='meeting.php?id=$id'> $title, ($year)</a></li>";
-					echo "<li><a href='meeting/meeting.php'> Name   Date 05/31/2016 </a></li>"; //meeting.php?id=1
-
-		    ?>
+		   <?php
+				 $ward_id = $_SESSION["ward_id"];
+				 $query = "SELECT id, date FROM meeting WHERE ward_id=:ward_id";
+				 $statement = $db->prepare($query);
+				 $statement->bindValue(':ward_id', $ward_id, PDO::PARAM_INT);
+				 $result = $statement->execute();
+				// // requesting the user
+				 if ($result)
+				 {
+				 	$meetings = $statement->fetchAll(PDO::FETCH_ASSOC);
+				//
+			    	foreach ($meetings as $meeting) {
+			       $id = $meeting['id'];
+			       $date = $meeting['date'];
+			       //echo "<li><a href='meeting.php?id=$id'> $date</a></li>";
+					 echo "<li><a href='meeting/meeting.php'> Date $date </a></li>"; //meeting.php?id=1
+					}
+				 }
+		   ?>
 		  </ul>
-		  <form action="addmovie.php" method="POST" style="margin-top: 10px;">
-		    <!-- <input type="submit" value="New Meeting"/> -->
+		  <form action="#" method="POST">
+				<input class="btn btn-info" type="submit" value="Add Movie"></input>
 		  </form>
 		  </div>
     </div>

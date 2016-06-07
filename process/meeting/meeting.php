@@ -5,6 +5,11 @@
 		header('Location: ../../index.php');
 	}
    include_once('../../helperFunctions.php');
+
+
+	include_once('../database.php');
+   include_once('../password.php');
+   $db = dbConnect();
 ?>
 <!DOCTYPE html>
 <html>
