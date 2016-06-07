@@ -53,7 +53,7 @@
                               <div class="row">
                                  <label class="control-label col-md-3" for="prayer">Prayer</label>
                                  <div class="col-md-9">
-                                    <input class="form-control" type="text" name="prayer" value="ELFRE"/>
+                                    <input class="form-control" type="text" name="prayer" value="<?php echo $prayer; ?>"/>
                                  </div>
                               </div>
                               <div class="row">
