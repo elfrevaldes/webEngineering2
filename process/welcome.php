@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	session_start();
 	if(!isset($_SESSION["email"]))
 	{
@@ -7,14 +7,16 @@
 	include_once('../helperFunctions.php');
 
 	include_once('database.php');
-   include_once('password.php');
-   $db = dbConnect();
+	$db = dbConnect();
+	include_once('queries.php');
+   //include_once('password.php');
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome <?php echo $_SESSION["display_name"]; ?></title>
-	  <?php writeHead('../'); ?>
+   <title>Welcome <?php echo $_SESSION["display_name"]; ?></title>
+	<?php writeHead('../'); ?>
 </head>
 <body>
 	<?php writeNav("../", "Home"); ?>
@@ -29,27 +31,18 @@
 			<div style="margin-top: 20px; margin-left: 20%; max-width: 500px;">
 		    <ul>
 		   <?php
-				 $ward_id = $_SESSION["ward_id"];
-				 $query = "SELECT id, date FROM meeting WHERE ward_id=:ward_id";
-				 $statement = $db->prepare($query);
-				 $statement->bindValue(':ward_id', $ward_id, PDO::PARAM_INT);
-				 $result = $statement->execute();
-				// // requesting the user
-				 if ($result)
-				 {
-				 	$meetings = $statement->fetchAll(PDO::FETCH_ASSOC);
-				//
+				$ward_id = $_SESSION["ward_id"];
+
+				$meetings = selectFromMeeting($db, $ward_id, "ward_id");
 			    	foreach ($meetings as $meeting) {
 			       $id = $meeting['id'];
 			       $date = $meeting['date'];
 			       echo "<li><a href='meeting/meeting.php?id=$id'> Date $date</a></li>";
-					 //echo "<li><a href='meeting/meeting.php'> Date $date </a></li>"; //meeting.php?id=1
 					}
-				 }
 		   ?>
 		  </ul>
 		  <form action="#" method="POST">
-				<input class="btn btn-info" type="submit" value="Add Movie"></input>
+				<input class="btn btn-info" type="submit" value="Add Meeting"></input>
 		  </form>
 		  </div>
     </div>
